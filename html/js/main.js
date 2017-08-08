@@ -1,18 +1,29 @@
-jQuery(document).ready(function($){
-	var isLateralNavAnimating = false;
-	
-	//open/close lateral navigation
-	$('.cd-nav-trigger').on('click', function(event){
-		event.preventDefault();
-		//stop if nav animation is running 
-		if( !isLateralNavAnimating ) {
-			if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true; 
-			
-			$('body').toggleClass('navigation-is-open');
-			$('.cd-navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-				//animation is over
-				isLateralNavAnimating = false;
-			});
-		}
-	});
+$( document ).ready(function(){
+	$('.leftmenu').sideNav({
+    edge: 'left', // Choose the horizontal origin
+    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    draggable: true, // Choose whether you can drag to open on touch screens,
+    });
+    
+    $('.rightmenu').sideNav({
+	menuWidth: '100%',
+    edge: 'right', // Choose the horizontal origin
+    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    draggable: false, // Choose whether you can drag to open on touch screens,
+    });
+    //Menu ^^
+    
+    
 });
+
+var connection = new WebSocket('ws://192.168.0.103:81/', ['arduino']);
+	connection.onopen = function () {  connection.send('Connect ' + new Date()); }; 
+	connection.onerror = function (error) {    console.log('WebSocket Error ', error);};
+	connection.onmessage = function (e) {  
+		console.log('Server: ', e.data);
+		Materialize.toast('Websocket Connected', 4000)
+	};
+	connection.onclose = function(e) {
+		console.log('Server: ', e.data);
+		Materialize.toast('Websocket Disconnected', 4000)
+	};
