@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	
 	<!-- build:css style.css -->
 		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
@@ -24,25 +25,24 @@
 <body>
 <main>
 
-  <nav class="z-depth-0">
+  <nav class="z-depth-0 white">
     <div class="nav-wrapper">
     <ul id="nav-mobile" data-activates="slide-out" class="left button-collapse leftmenu">
-    <a href="#"><i class="material-icons">menu</i></a>
+    <a href="#"><i class="material-icons grey-text darken-1-text">menu</i></a>
 	</ul>
-	<span class="flow-text">Disco Couch</span>
+	<span class="flow-text grey-text darken-1-text">Disco Couch</span>
     <ul id="nav-mobile" data-activates="slide-out2" class="right button-collapse rightmenu">
-    <a href="#"><i class="material-icons">settings</i></a>
+    <a href="#"><i class="material-icons grey-text darken-1-text">settings</i></a>
 	</ul>
     </div>
-    
-    
+        
     <!-- Left Slider -->	
 	<ul id="slide-out" class="side-nav">
 			<li><div class="user-view">
     			<div class="background">
         			<img src="http://i.imgur.com/fRRBlwi.jpg">
     			</div>
-    			<a href="#!user"><img class="circle" src="http://i.imgur.com/fRRBlwi.jpg"></a>
+    			<span id="sync-icon" class="material-icons" style="font-size: 60px">sync</span
     			<a href="#!name"><span class="white-text name">John Doe</span></a>
       			<a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
     		</div></li>
@@ -56,29 +56,49 @@
     
     <!-- Right Slider -->
     <ul id="slide-out2" class="side-nav">
-    	<nav class="z-depth-1">
+    	<nav class="z-depth-0 white">
     		<div class="nav-wrapper">
     		<ul id="nav-mobile" class="left button-collapse" onclick="$('.button-collapse').sideNav('hide');">
-    		<a href="#"><i class="material-icons">arrow_back</i></a>
+    		<a href="#"><i class="material-icons grey-text darken-1-text">arrow_back</i></a>
 			</ul>
-		<span class="flow-text">Disco Couch</span>
+		<span class="flow-text grey-text darken-1-text">Devices</span>
     		<ul id="nav-mobile" class="right button-collapse">
-    	<a href="#" class="dropdown-button" data-activates="dropdown1"><i class="material-icons">more_vert</i></a>
+    	<a href="#" class="dropdown-button" data-activates="dropdown1"><i class="material-icons grey-text darken-1-text">more_vert</i></a>
       	<ul id='dropdown1' class='dropdown-content'>
-        	<li><a href="#!">First</a></li>
-        	<li><a href="#!">Second</a></li>
-        	<li><a href="#!">Third</a></li>
-        	<li><a href="#!">Fourth</a></li>
+        	<li><a href="/about">About</a></li>
      	 </ul>
 	</ul>
     </div>
     	</nav>
-    <!-- Left Slider End-->
-    
+    <ul>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    </ul>
+    <!-- Right Slider End-->
     
   </nav>
 
-
+  <div class="row">
+    <div class="col s12">
+      <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width">
+        <li class="tab col s6"><a class="active" href="#test1">Test 1</a></li>
+        <li class="tab col s6"><a href="#test2">Test 2</a></li>
+      </ul>
+    </div>
+    <div id="test1" class="col s12"><div class="card-panel teal">
+          <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+          </span>
+        </div></div>
+    <div id="test2" class="col s12"><div class="card-panel teal">
+          <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+          </span>
+        </div></div>
+  </div>
 
 </main>
 </body>
