@@ -8,12 +8,14 @@
 	
 	<!-- build:css style.css -->
 		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"  media="screen,projection"/>
 		<link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
 	<!-- endbuild -->
 
 	<!-- build:js script.js -->
 		<script src="js/jquery-2.1.1.js"></script>
 		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript" src="js/nouislider.min.js"></script>
 		<script type="text/javascript" src="js/gauge.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 	<!-- endbuild -->
@@ -65,7 +67,7 @@
     		<ul id="nav-mobile" class="right button-collapse">
     	<a href="#" class="dropdown-button" data-activates="dropdown1"><i class="material-icons grey-text darken-1-text">more_vert</i></a>
       	<ul id='dropdown1' class='dropdown-content'>
-        	<li><a href="/about">About</a></li>
+        	<li><a data-target="modal1" class="modal-trigger" href="">About</a></li>
      	 </ul>
 	</ul>
     </div>
@@ -84,20 +86,49 @@
   <div class="row">
     <div class="col s12">
       <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width">
-        <li class="tab col s6"><a class="active" href="#test1">Test 1</a></li>
-        <li class="tab col s6"><a href="#test2">Test 2</a></li>
+        <li class="tab col s6"><a class="active" href="#test1">Main</a></li>
+        <li class="tab col s6"><a href="#test2">Palettes</a></li>
       </ul>
     </div>
-    <div id="test1" class="col s12"><div class="card-panel teal">
-          <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-          </span>
-        </div></div>
-    <div id="test2" class="col s12"><div class="card-panel teal">
-          <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-          </span>
-        </div></div>
+    <div id="test1" class="col s12">
+
+    	<div class="card-panel white">
+        	<div class="row valign-wrapper">
+                  <div class="col s11"><div class="sliders hbc" id="Hue"></div></div><div class="col s1"><i class="small material-icons grey-text darken-1-text ">color_lens</i></div>
+            </div>
+            <div class="row valign-wrapper">
+                  <div class="col s11"><div class="sliders hbc" id="Brightness"></div></div><div class="col s1"><i class="small material-icons grey-text darken-1-text">wb_sunny</i></div>
+            </div>
+            <div class="row valign-wrapper">
+                  <div class="col s11"><div class="sliders hbc" id="Contrast"></div></div><div class="col s1"><i class="small material-icons grey-text darken-1-text">insert_chart</i></div>
+            </div>
+        </div>
+        
+        </div>     <!-- Right Slider -->
+    <div id="test2" class="col s12">
+    
+    <div class="card-panel white">
+        	<div class="row valign-wrapper">
+                  <div class="col s11"><div class="sliders palettes" id="paletteselect"></div></div><div class="col s1"><i class="small material-icons grey-text darken-1-text ">color_lens</i></div>
+            </div>
+        </div>
+    
+    
+    </div>
+  </div>
+  
+  
+  
+    <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>About</h4>
+      <p>This project was created by <a href="http://www.rawromg.com/">Adam Hageman</a> and made possible by a few helpful libraries.</p>
+      <p><a href="https://github.com/esp8266/Arduino#license-and-credits">ESP8266 Arduino Core</a> (LGPL), <a href="https://github.com/pellepl/spiffs"> SPI Flash File System</a>, <a href="https://github.com/FastLED/FastLED/wiki/Overview">FastLED</a> (MIT), <a href="https://github.com/Links2004/arduinoWebSockets">ESP8266-Websocket</a> (LGPLv2.1), </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Dismiss</a>
+    </div>
   </div>
 
 </main>
